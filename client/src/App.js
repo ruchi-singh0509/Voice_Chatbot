@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { FaMicrophone, FaMicrophoneSlash, FaPaperPlane } from 'react-icons/fa';
 import './App.css';
 
-const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:3003';
+const API_URL = process.env.REACT_APP_API_URL?.replace(/\/$/, '') || 'http://localhost:3003';
 
 function App() {
   const [isListening, setIsListening] = useState(false);
