@@ -82,3 +82,41 @@ The voice features require a modern browser that supports the Web Speech API. Th
 - The client runs on port 3000 by default
 - Make sure both the server and client are running simultaneously
 - Allow microphone access when prompted by your browser 
+
+## Local Setup Instructions
+
+To run this project locally, you need to set up environment variables for both the client and server:
+
+### 1. Client
+- Go to the `client` directory.
+- Copy `.env.example` to `.env`:
+  ```bash
+  cp .env.example .env
+  ```
+- Edit `.env` and set `REACT_APP_API_URL` to your backend URL (for local development, this is usually `http://localhost:3003`).
+
+### 2. Server
+- Go to the `server` directory.
+- Copy `.env.example` to `.env`:
+  ```bash
+  cp .env.example .env
+  ```
+- Edit `.env` and set:
+  - `OPENAI_API_KEY` to your OpenAI API key
+  - `FRONTEND_URL` to your frontend URL (for local development, this is usually `http://localhost:3000`)
+
+**Note:** Never commit your real `.env` files or secrets to version control.
+
+### 3. Start the Servers
+- In the `server` directory, run:
+  ```bash
+  npm install
+  npm run dev
+  ```
+- In the `client` directory, run:
+  ```bash
+  npm install
+  npm start
+  ```
+
+Your app should now be running locally. 
